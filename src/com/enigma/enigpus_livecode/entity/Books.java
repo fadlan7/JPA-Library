@@ -11,12 +11,7 @@ public class Books extends Book implements Serializable {
     private String author;
 
     //magazine
-//    private String code;
-//    private String title;
     private String publicationPeriod;
-//    private String yearOfPublication;
-
-
 
     public Books(String code, String title, String publisher, Integer yearOfPublication, String author) {
         this.code = code;
