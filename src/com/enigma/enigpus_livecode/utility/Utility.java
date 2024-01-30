@@ -37,9 +37,6 @@ public class Utility {
     public static String novelCode(List<Books> bookLists, Integer year) {
         int lines = 0;
 
-        int size = bookLists.size();
-        System.out.println("boolistsize" + size);
-
         if (bookLists.isEmpty()) {
             lines = 1;
         } else {
@@ -53,9 +50,6 @@ public class Utility {
 
     public static String magazineCode(List<Books> bookLists, Integer year) {
         int lines = 0;
-
-        int size = bookLists.size();
-        System.out.println("boolistsize" + size);
 
         if (bookLists.isEmpty()) {
             lines = 1;

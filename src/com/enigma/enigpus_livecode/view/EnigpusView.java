@@ -73,7 +73,6 @@ public class EnigpusView {
 
         String formattedCode = Utility.novelCode(books, yearOfPublish);
 
-        System.out.println(formattedCode);
         Books novel = new Books(formattedCode, title, publisher, yearOfPublish, author);
         inventoryService.addBook(novel);
     }
@@ -87,7 +86,6 @@ public class EnigpusView {
 
         String formattedCode = Utility.magazineCode(books, yearOfPublish);
 
-        System.out.println(formattedCode);
         Books novel = new Books(formattedCode, title, publicationPeriod, yearOfPublish);
         inventoryService.addBook(novel);
     }
