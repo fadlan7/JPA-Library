@@ -49,7 +49,7 @@ public class EnigpusView {
                     findBookByTitle();
                 }
                 case "5" -> {
-//                    findBookByCode();
+                    findBookByCode();
                 }
                 case "6" -> {
                     deleteBook();
@@ -116,6 +116,11 @@ public class EnigpusView {
     private void findBookByTitle() {
         String bookTitle = Utility.inputUtil("Masukan Judul Buku Yang Ingin Dicari");
         inventoryService.findBookByTitle(bookTitle);
+    }
+
+    private void findBookByCode() {
+        String bookCode = Utility.inputUtil("Masukan Kode Buku Yang Ingin Dicari");
+        inventoryService.findBookByCode(bookCode);
     }
 
     private void deleteBook() {

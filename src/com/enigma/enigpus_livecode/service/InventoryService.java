@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface InventoryService {
     void addBook(Books book);
-    void  findBookByTitle(String title);
-    void searchBookByCode();
+    void findBookByTitle(String title);
+    void findBookByCode(String bookCode);
     boolean deleteBookByCode(String bookCode);
     List<Books> getAllBook();
 }
