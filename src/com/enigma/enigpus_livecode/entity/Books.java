@@ -26,7 +26,7 @@ public class Books extends Book implements Serializable {
         this.author = author;
     }
 
-    public Books(String title, String publicationPeriod, String yearOfPublication) {
+    public Books(String code,String title, String publicationPeriod, String yearOfPublication) {
         this.code = code;
         this.title = title;
         this.publicationPeriod = publicationPeriod;

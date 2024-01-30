@@ -39,7 +39,7 @@ public class EnigpusView {
                     addNovelView();
                 }
                 case "2" -> {
-//                    addMagazineView();
+                    addMagazineView();
                 }
                 case "3" -> {
                     showAllBook();
@@ -70,7 +70,19 @@ public class EnigpusView {
         String formattedCode = Utility.novelCode(yearOfPublish);
 
         System.out.println(formattedCode);
-        Books novel = new Books(formattedCode, title,publisher,yearOfPublish,author);
+        Books novel = new Books(formattedCode, title, publisher, yearOfPublish, author);
+        inventoryService.addBook(novel);
+    }
+
+    private void addMagazineView() {
+        String title = Utility.inputUtil("Input Judul");
+        String publicationPeriod = Utility.inputUtil("Input Periode Terbit (mingguan atau bulanan)");
+        String yearOfPublish = Utility.inputUtil("Input Tahun Terbit");
+
+        String formattedCode = Utility.magazineCode(yearOfPublish);
+
+        System.out.println(formattedCode);
+        Books novel = new Books(formattedCode, title, publicationPeriod, yearOfPublish);
         inventoryService.addBook(novel);
     }
 
@@ -78,10 +90,21 @@ public class EnigpusView {
         List<Books> books = inventoryService.getAllBook();
         if (books != null && !books.isEmpty()) {
             System.out.println("-".repeat(100));
-            String format = String.format("%-30s %-30s %-30s %-30s %-30s","Kode","Judul", "Penerbit", "Tahun Terbit", "Penulis");
+            String format = String.format("%-20s %-20s %-20s %-20s %-20s %-20s", "Kode", "Judul", "Penerbit", "Tahun Terbit", "Penulis", "Periode Terbit");
             System.out.println(format);
             for (Books book : books) {
-                System.out.printf("%-30s %-30s %-30s %-30s %-30s\n", book.getCode(),book.getTitle(), book.getPublisher(), book.getYearOfPublication(), book.getAuthor());
+                String publisher = book.getPublisher();
+                String author = book.getAuthor();
+                String publicationPeriod = book.getPublicationPeriod();
+                if (book.getPublicationPeriod() == null) {
+                    publicationPeriod = "-";
+                }
+
+                if (book.getPublisher() == null && book.getAuthor() == null) {
+                    publisher = "-";
+                    author = "-";
+                }
+                System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", book.getCode(), book.getTitle(), publisher, book.getYearOfPublication(), author, publicationPeriod);
             }
         } else {
             System.out.println("Data Kosong");
@@ -99,7 +122,6 @@ public class EnigpusView {
     }
 
 
-
     private void viewAllMahasiswa() {
 //        List<Mahasiswa> mahasiswas = mahasiswaService.getAll();
 //        if (mahasiswas != null && !mahasiswas.isEmpty()) {
@@ -115,7 +137,7 @@ public class EnigpusView {
 //        System.out.println("-".repeat(100));
     }
 
-    private void deleteMahasiswa(){
+    private void deleteMahasiswa() {
 //        int id = Utility.inputIntUtil("Enter Mahasiswa ID to delete");
 //        boolean deleted = mahasiswaService.delete(id);
 //

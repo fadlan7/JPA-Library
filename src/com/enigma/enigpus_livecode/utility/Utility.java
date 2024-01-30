@@ -71,5 +71,40 @@ public class Utility {
         return formattedCode;
     }
 
+    public static String magazineCode(String year) {
+        int lines = 0;
+
+
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(String.valueOf(FileUtil.bookPath)))) {
+
+//            while ((reader.readLine() != null)) {
+//                if (reader.readLine() == null) {
+//                    lines = 1;
+//                } else {
+//                    lines++;
+//                }
+//            }
+
+//            if (reader.readLine() == null) {
+//                lines += 1;
+//            } else {
+            while (reader.readLine() != null) lines++;
+//            }
+
+            reader.close();
+            System.out.println(lines);
+        } catch (FileNotFoundException e) {
+//            lines =1;
+            File emptyFile = new File("enigpus");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        String formattedCode = String.format("%s-B-%d", year, lines);
+
+        return formattedCode;
+    }
+
 
 }
