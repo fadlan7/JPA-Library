@@ -57,6 +57,9 @@ public class EnigpusView {
                 case "x", "X" -> {
                     return;
                 }
+                default -> {
+                    System.out.println("Tidak ada pilihan menu itu!");
+                }
             }
             System.out.println();
         }
