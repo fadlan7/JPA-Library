@@ -18,6 +18,7 @@ public class Utility {
             System.out.printf("%s : ", info);
             String result = scanner.nextLine();
             if (result.isEmpty() || result.isBlank()) {
+                System.out.println("Tidak boleh kosong, wajib diisi!\n");
                 continue;
             }
             return result;
@@ -30,7 +31,11 @@ public class Utility {
             System.out.printf("%s : ", info);
             try {
                 return Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Tidak boleh kosong dan wajib inputan angka!\n");
+                continue;
             } catch (Exception e) {
+                e.printStackTrace();
                 continue;
             }
         }
@@ -38,7 +43,6 @@ public class Utility {
 
     public static String novelCode(Integer year) {
         int lines = 0;
-
 
 
         try (BufferedReader reader = new BufferedReader(new FileReader(String.valueOf(FileUtil.bookPath)))) {
@@ -54,7 +58,7 @@ public class Utility {
 //            if (reader.readLine() == null) {
 //                lines += 1;
 //            } else {
-                while (reader.readLine() != null) lines++;
+            while (reader.readLine() != null) lines++;
 //            }
 
             reader.close();
@@ -73,7 +77,6 @@ public class Utility {
 
     public static String magazineCode(Integer year) {
         int lines = 0;
-
 
 
         try (BufferedReader reader = new BufferedReader(new FileReader(String.valueOf(FileUtil.bookPath)))) {
