@@ -1,11 +1,8 @@
 package com.enigma.enigpus_livecode.service;
 
-import com.enigma.enigpus_livecode.entity.Book;
 import com.enigma.enigpus_livecode.entity.Books;
-import com.enigma.enigpus_livecode.entity.Novel;
 import com.enigma.enigpus_livecode.utility.FileUtil;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +37,22 @@ public class InventoryServiceImpl implements InventoryService{
     }
 
     @Override
-    public void deleteBookByCode() {
+    public boolean deleteBookByCode(String bookCode) {
+        List<Books> books = getAllBook();
+        boolean deleted = false;
 
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getCode().equals(bookCode)) {
+                books.remove(i);
+                deleted = true;
+                break;
+            }
+        }
+
+        if (deleted) {
+            FileUtil.saveObject(books);
+        }
+
+        return deleted;
     }
 }

@@ -3,6 +3,7 @@ package com.enigma.enigpus_livecode.view;
 import com.enigma.enigpus_livecode.entity.Books;
 import com.enigma.enigpus_livecode.entity.Novel;
 import com.enigma.enigpus_livecode.service.InventoryService;
+import com.enigma.enigpus_livecode.service.InventoryServiceImpl;
 import com.enigma.enigpus_livecode.utility.Utility;
 
 import java.util.List;
@@ -51,7 +52,7 @@ public class EnigpusView {
 //                    findBookByCode();
                 }
                 case "6" -> {
-//                    deleteBook();
+                    deleteBook();
                 }
                 case "x", "X" -> {
                     return;
@@ -110,6 +111,17 @@ public class EnigpusView {
             System.out.println("Data Kosong");
         }
         System.out.println("-".repeat(100));
+    }
+
+    private void deleteBook() {
+        String bookCode = Utility.inputUtil("Masukan Kode Buku Yang Ingin Dihapus");
+        boolean deleted = inventoryService.deleteBookByCode(bookCode);
+
+        if (deleted) {
+            System.out.println("Buku dengan Kode " + bookCode + " berhasil dihapus.");
+        } else {
+            System.out.println("Buku dengan Kode " + bookCode + " tidak ditemukan.");
+        }
     }
 
 

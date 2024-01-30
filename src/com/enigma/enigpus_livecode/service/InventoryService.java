@@ -9,6 +9,6 @@ public interface InventoryService {
     void addBook(Books book);
     void  searchBookByTitle();
     void searchBookByCode();
-    void deleteBookByCode();
+    boolean deleteBookByCode(String bookCode);
     List<Books> getAllBook();
 }
