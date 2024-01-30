@@ -1,5 +1,7 @@
 package com.enigma.enigpus_livecode.view;
 
+import com.enigma.enigpus_livecode.entity.Books;
+import com.enigma.enigpus_livecode.entity.Novel;
 import com.enigma.enigpus_livecode.service.InventoryService;
 import com.enigma.enigpus_livecode.utility.Utility;
 
@@ -34,7 +36,7 @@ public class EnigpusView {
             String opt = Utility.inputUtil("Pilih Menu");
             switch (opt) {
                 case "1" -> {
-//                    addNovelView();
+                    addNovelView();
                 }
                 case "2" -> {
 //                    addMagazineView();
@@ -59,6 +61,16 @@ public class EnigpusView {
         }
     }
 
+    private void addNovelView() {
+        String title = Utility.inputUtil("Input Judul");
+        String publisher = Utility.inputUtil("Input Penerbit");
+        String yearOfPublish = Utility.inputUtil("Input Tahun Terbit");
+        String author = Utility.inputUtil("Input Penulis");
+
+        Books novel = new Books(title,publisher,yearOfPublish,author);
+        inventoryService.addBook(novel);
+    }
+
     private void saveMahasiswaView() {
         String name = Utility.inputUtil("Input Nama");
         int age = Utility.inputIntUtil("Input Umur");
@@ -66,6 +78,8 @@ public class EnigpusView {
 //        Mahasiswa mahasiswa = new Mahasiswa(name, age, major);
 //        mahasiswaService.create(mahasiswa);
     }
+
+
 
     private void viewAllMahasiswa() {
 //        List<Mahasiswa> mahasiswas = mahasiswaService.getAll();
