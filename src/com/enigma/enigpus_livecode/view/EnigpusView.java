@@ -46,7 +46,7 @@ public class EnigpusView {
                     showAllBook();
                 }
                 case "4" -> {
-//                    findBookByTitle();
+                    findBookByTitle();
                 }
                 case "5" -> {
 //                    findBookByCode();
@@ -111,6 +111,11 @@ public class EnigpusView {
             System.out.println("Data Kosong");
         }
         System.out.println("-".repeat(100));
+    }
+
+    private void findBookByTitle() {
+        String bookTitle = Utility.inputUtil("Masukan Judul Buku Yang Ingin Dicari");
+        inventoryService.findBookByTitle(bookTitle);
     }
 
     private void deleteBook() {

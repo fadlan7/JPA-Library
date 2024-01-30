@@ -27,8 +27,33 @@ public class InventoryServiceImpl implements InventoryService{
     }
 
     @Override
-    public void searchBookByTitle() {
+    public void findBookByTitle(String title) {
+        List<Books> books = getAllBook();
 
+        for (Books book : books) {
+            if (book.getTitle().equals(title)) {
+                String format = String.format("%-20s %-20s %-20s %-20s %-20s %-20s", "Kode", "Judul", "Penerbit", "Tahun Terbit", "Penulis", "Periode Terbit");
+                System.out.println(format);
+
+                String publisher = book.getPublisher();
+                String author = book.getAuthor();
+                String publicationPeriod = book.getPublicationPeriod();
+                if (book.getPublicationPeriod() == null) {
+                    publicationPeriod = "-";
+                }
+
+                if (book.getPublisher() == null && book.getAuthor() == null) {
+                    publisher = "-";
+                    author = "-";
+                }
+
+                System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", book.getCode(), book.getTitle(), publisher, book.getYearOfPublication(), author, publicationPeriod);
+
+            }
+//            else {
+//                System.out.println("Buku tidak ditemukan");
+//            }
+        }
     }
 
     @Override

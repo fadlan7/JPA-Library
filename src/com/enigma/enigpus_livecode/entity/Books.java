@@ -82,5 +82,4 @@ public class Books extends Book implements Serializable {
     public String getTitle() {
         return title;
     }
-
 }
