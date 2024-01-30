@@ -42,7 +42,7 @@ public class EnigpusView {
 //                    addMagazineView();
                 }
                 case "3" -> {
-//                    showAllBook();
+                    showAllBook();
                 }
                 case "4" -> {
 //                    findBookByTitle();
@@ -67,9 +67,28 @@ public class EnigpusView {
         String yearOfPublish = Utility.inputUtil("Input Tahun Terbit");
         String author = Utility.inputUtil("Input Penulis");
 
-        Books novel = new Books(title,publisher,yearOfPublish,author);
+        String formattedCode = Utility.novelCode(yearOfPublish);
+
+        System.out.println(formattedCode);
+        Books novel = new Books(formattedCode, title,publisher,yearOfPublish,author);
         inventoryService.addBook(novel);
     }
+
+    private void showAllBook() {
+        List<Books> books = inventoryService.getAllBook();
+        if (books != null && !books.isEmpty()) {
+            System.out.println("-".repeat(100));
+            String format = String.format("%-30s %-30s %-30s %-30s %-30s","Kode","Judul", "Penerbit", "Tahun Terbit", "Penulis");
+            System.out.println(format);
+            for (Books book : books) {
+                System.out.printf("%-30s %-30s %-30s %-30s %-30s\n", book.getCode(),book.getTitle(), book.getPublisher(), book.getYearOfPublication(), book.getAuthor());
+            }
+        } else {
+            System.out.println("Data Kosong");
+        }
+        System.out.println("-".repeat(100));
+    }
+
 
     private void saveMahasiswaView() {
         String name = Utility.inputUtil("Input Nama");
