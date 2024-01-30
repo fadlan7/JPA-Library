@@ -29,6 +29,7 @@ public class EnigpusView {
                     4. Cari Buku Berdasarkan Judul
                     5. Cari Buku Berdasarkan Kode
                     6. Hapus Buku
+                    7. Update Buku
                     X. Keluar
                     """);
             System.out.println("-".repeat(100));
@@ -51,6 +52,9 @@ public class EnigpusView {
                 }
                 case "6" -> {
                     deleteBook();
+                }
+                case "7" -> {
+                    updateBook();
                 }
                 case "x", "X" -> {
                     return;
@@ -135,5 +139,14 @@ public class EnigpusView {
         } else {
             System.out.println("Buku dengan Kode " + bookCode + " tidak ditemukan.");
         }
+    }
+
+    private void updateBook(){
+//        List<Books> books = inventoryService.getAllBook();
+//
+//        String bookCode = Utility.inputUtil("Masukan Kode Buku Yang Ingin Diedit");
+//
+//        inventoryService.updateBook(bookCode);
+        System.out.println("Fitur belum selesai");
     }
 }

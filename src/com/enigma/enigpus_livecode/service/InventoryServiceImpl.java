@@ -2,14 +2,15 @@ package com.enigma.enigpus_livecode.service;
 
 import com.enigma.enigpus_livecode.entity.Books;
 import com.enigma.enigpus_livecode.utility.FileUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class InventoryServiceImpl implements InventoryService{
+public class InventoryServiceImpl implements InventoryService {
 
     @Override
     public void addBook(Books book) {
-        List<Books> bookLists =getAllBook();
+        List<Books> bookLists = getAllBook();
         bookLists.add(book);
         FileUtil.saveObject(bookLists);
     }
@@ -23,6 +24,12 @@ public class InventoryServiceImpl implements InventoryService{
         }
 
         return (List<Books>) object;
+    }
+
+    @Override
+    public void updateBook(String bookCode) {
+        List<Books> books = getAllBook();
+
     }
 
     @Override
