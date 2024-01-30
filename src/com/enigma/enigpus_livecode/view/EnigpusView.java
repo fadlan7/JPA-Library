@@ -66,12 +66,14 @@ public class EnigpusView {
     }
 
     private void addNovelView() {
+        List<Books> books = inventoryService.getAllBook();
+
         String title = Utility.inputUtil("Input Judul");
         String publisher = Utility.inputUtil("Input Penerbit");
         Integer yearOfPublish = Utility.inputIntUtil("Input Tahun Terbit");
         String author = Utility.inputUtil("Input Penulis");
 
-        String formattedCode = Utility.novelCode(yearOfPublish);
+        String formattedCode = Utility.novelCode(books, yearOfPublish);
 
         System.out.println(formattedCode);
         Books novel = new Books(formattedCode, title, publisher, yearOfPublish, author);
@@ -79,11 +81,13 @@ public class EnigpusView {
     }
 
     private void addMagazineView() {
+        List<Books> books = inventoryService.getAllBook();
+
         String title = Utility.inputUtil("Input Judul");
         String publicationPeriod = Utility.inputUtil("Input Periode Terbit (mingguan atau bulanan)");
         Integer yearOfPublish = Utility.inputIntUtil("Input Tahun Terbit");
 
-        String formattedCode = Utility.magazineCode(yearOfPublish);
+        String formattedCode = Utility.magazineCode(books, yearOfPublish);
 
         System.out.println(formattedCode);
         Books novel = new Books(formattedCode, title, publicationPeriod, yearOfPublish);

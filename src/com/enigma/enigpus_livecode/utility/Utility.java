@@ -41,33 +41,16 @@ public class Utility {
         }
     }
 
-    public static String novelCode(Integer year) {
+    public static String novelCode(List<Books> bookLists, Integer year) {
         int lines = 0;
 
+        int size = bookLists.size();
+        System.out.println("boolistsize" + size);
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(String.valueOf(FileUtil.bookPath)))) {
-
-//            while ((reader.readLine() != null)) {
-//                if (reader.readLine() == null) {
-//                    lines = 1;
-//                } else {
-//                    lines++;
-//                }
-//            }
-
-//            if (reader.readLine() == null) {
-//                lines += 1;
-//            } else {
-            while (reader.readLine() != null) lines++;
-//            }
-
-            reader.close();
-            System.out.println(lines);
-        } catch (FileNotFoundException e) {
-//            lines =1;
-            File emptyFile = new File("enigpus");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        if (bookLists.isEmpty()) {
+            lines = 1;
+        } else {
+            lines = bookLists.size() + 1;
         }
 
         String formattedCode = String.format("%s-A-%d", year, lines);
@@ -75,33 +58,16 @@ public class Utility {
         return formattedCode;
     }
 
-    public static String magazineCode(Integer year) {
+    public static String magazineCode(List<Books> bookLists, Integer year) {
         int lines = 0;
 
+        int size = bookLists.size();
+        System.out.println("boolistsize" + size);
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(String.valueOf(FileUtil.bookPath)))) {
-
-//            while ((reader.readLine() != null)) {
-//                if (reader.readLine() == null) {
-//                    lines = 1;
-//                } else {
-//                    lines++;
-//                }
-//            }
-
-//            if (reader.readLine() == null) {
-//                lines += 1;
-//            } else {
-            while (reader.readLine() != null) lines++;
-//            }
-
-            reader.close();
-            System.out.println(lines);
-        } catch (FileNotFoundException e) {
-//            lines =1;
-            File emptyFile = new File("enigpus");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        if (bookLists.isEmpty()) {
+            lines = 1;
+        } else {
+            lines = bookLists.size() + 1;
         }
 
         String formattedCode = String.format("%s-B-%d", year, lines);
