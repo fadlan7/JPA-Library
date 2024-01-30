@@ -36,7 +36,7 @@ public class Utility {
         }
     }
 
-    public static String novelCode(String year) {
+    public static String novelCode(Integer year) {
         int lines = 0;
 
 
@@ -71,7 +71,7 @@ public class Utility {
         return formattedCode;
     }
 
-    public static String magazineCode(String year) {
+    public static String magazineCode(Integer year) {
         int lines = 0;
 
 

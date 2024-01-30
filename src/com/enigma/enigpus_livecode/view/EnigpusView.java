@@ -65,7 +65,7 @@ public class EnigpusView {
     private void addNovelView() {
         String title = Utility.inputUtil("Input Judul");
         String publisher = Utility.inputUtil("Input Penerbit");
-        String yearOfPublish = Utility.inputUtil("Input Tahun Terbit");
+        Integer yearOfPublish = Utility.inputIntUtil("Input Tahun Terbit");
         String author = Utility.inputUtil("Input Penulis");
 
         String formattedCode = Utility.novelCode(yearOfPublish);
@@ -78,7 +78,7 @@ public class EnigpusView {
     private void addMagazineView() {
         String title = Utility.inputUtil("Input Judul");
         String publicationPeriod = Utility.inputUtil("Input Periode Terbit (mingguan atau bulanan)");
-        String yearOfPublish = Utility.inputUtil("Input Tahun Terbit");
+        Integer yearOfPublish = Utility.inputIntUtil("Input Tahun Terbit");
 
         String formattedCode = Utility.magazineCode(yearOfPublish);
 

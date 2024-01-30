@@ -7,7 +7,7 @@ public class Books extends Book implements Serializable {
     private String code;
     private String title;
     private String publisher;
-    private String yearOfPublication;
+    private Integer yearOfPublication;
     private String author;
 
     //magazine
@@ -18,7 +18,7 @@ public class Books extends Book implements Serializable {
 
 
 
-    public Books(String code, String title, String publisher, String yearOfPublication, String author) {
+    public Books(String code, String title, String publisher, Integer yearOfPublication, String author) {
         this.code = code;
         this.title = title;
         this.publisher = publisher;
@@ -26,7 +26,7 @@ public class Books extends Book implements Serializable {
         this.author = author;
     }
 
-    public Books(String code,String title, String publicationPeriod, String yearOfPublication) {
+    public Books(String code,String title, String publicationPeriod, Integer yearOfPublication) {
         this.code = code;
         this.title = title;
         this.publicationPeriod = publicationPeriod;
@@ -49,11 +49,11 @@ public class Books extends Book implements Serializable {
         this.publisher = publisher;
     }
 
-    public String getYearOfPublication() {
+    public Integer getYearOfPublication() {
         return yearOfPublication;
     }
 
-    public void setYearOfPublication(String yearOfPublication) {
+    public void setYearOfPublication(Integer yearOfPublication) {
         this.yearOfPublication = yearOfPublication;
     }
 
