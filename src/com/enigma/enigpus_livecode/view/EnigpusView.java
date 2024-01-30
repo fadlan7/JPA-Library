@@ -83,10 +83,15 @@ public class EnigpusView {
 
     private void addMagazineView() {
         List<Books> books = inventoryService.getAllBook();
+        String publicationPeriod;
 
         String title = Utility.inputUtil("Input Judul");
-        String publicationPeriod = Utility.inputUtil("Input Periode Terbit (mingguan atau bulanan)");
+//        String publicationPeriod = Utility.inputUtil("Input Periode Terbit (mingguan atau bulanan)");
         Integer yearOfPublish = Utility.inputIntUtil("Input Tahun Terbit");
+
+        do {
+            publicationPeriod = Utility.inputUtil("Input Periode Terbit (mingguan atau bulanan)");
+        }while(!(publicationPeriod.toLowerCase().equals("mingguan") || publicationPeriod.toLowerCase().equals("bulanan")));
 
         String formattedCode = Utility.magazineCode(books, yearOfPublish);
 

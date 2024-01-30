@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d673dac-14fa-46ab-a3cf-6326254362a9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/enigma/enigpus_livecode/service/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/enigma/enigpus_livecode/service/InventoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/enigma/enigpus_livecode/service/InventoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/enigma/enigpus_livecode/service/InventoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/enigma/enigpus_livecode/view/EnigpusView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/enigma/enigpus_livecode/view/EnigpusView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +58,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706578136866</updated>
-      <workItem from="1706578138062" duration="25812000" />
+      <workItem from="1706578138062" duration="26175000" />
     </task>
     <servers />
   </component>
